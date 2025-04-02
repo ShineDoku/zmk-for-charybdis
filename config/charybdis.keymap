@@ -15,7 +15,7 @@
         bns_macro1: bns_macro1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp J &kp F>, <&macro_pause_for_release>;
+            bindings = <&macro_tap &kp J &kp F>, <&macro_pause_for_release>;
 
             label = "BNS_MACRO1";
             wait-ms = <5>;
@@ -25,7 +25,7 @@
         bns_macro2: bns_macro2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp L &kp X>, <&macro_pause_for_release>;
+            bindings = <&macro_tap &kp L &kp X>, <&macro_pause_for_release>;
 
             label = "BNS_MACRO2";
             wait-ms = <5>;
