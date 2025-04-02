@@ -15,11 +15,14 @@
         bns_macro1: bns_macro1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
-            hold-actions = <&macro_tap &kp J>, 
+            bindings = <&macro_tap &kp J>, 
 <&macro_wait_time 5>,
 <&macro_tap &kp F>,
 <&macro_wait_time 5>;
-
+hold-actions = <&macro_tap &kp J>, 
+<&macro_wait_time 5>,
+<&macro_tap &kp F>,
+<&macro_wait_time 5>;
             label = "BNS_MACRO1";
             wait-ms = <5>;
             tap-ms = <5>;
