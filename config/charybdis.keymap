@@ -15,7 +15,12 @@
         bns_macro1: bns_macro1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp J>, <&macro_tap &kp F>, <&macro_pause_for_release>;
+            bindings = 
+<&macro_press &kp J>, 
+<&macro_press &kp F>, 
+<&macro_pause_for_release>,
+<&macro_release &kp J>,
+<&macro_release &kp F>;
 
             label = "BNS_MACRO1";
             wait-ms = <5>;
