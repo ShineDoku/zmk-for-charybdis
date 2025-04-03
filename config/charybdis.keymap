@@ -11,6 +11,16 @@
 / {
     combos { compatible = "zmk,combos"; };
 
+behaviors {
+        compatible = "zmk,behaviors";
+        
+        custom_macro_jk_repeat: custom_macro_jk_repeat {
+            compatible = "zmk,behavior-custom";
+            #binding-cells = <0>;
+            label = "CUSTOM_MACRO_JK_REPEAT";
+        };
+    };
+
     macros {
         bns_macro1: bns_macro1 {
             compatible = "zmk,behavior-macro";
