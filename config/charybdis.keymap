@@ -61,7 +61,7 @@ behaviors {
                                              &kp LEFT_ALT  &kp LCTRL         &kp SPACE
             >;
 
-            trackball-bindings = <&tmv_coarse>;
+            //trackball-bindings = <&tmv_coarse>;
         };
 
         layer_1 {
@@ -107,7 +107,7 @@ behaviors {
                                                               &trans            &trans       &trans
             >;
 
-            trackball-bindings = <&tsl>;//滚轮层
+            //trackball-bindings = <&tsl>;//滚轮层
         };
 
         layer_5 {
@@ -120,7 +120,7 @@ behaviors {
                                       &trans     &trans       &trans
             >;
 
-            trackball-bindings = <&tmv_fine>;//精准指针层
+           // trackball-bindings = <&tmv_fine>;//精准指针层
         };
     };
 };
