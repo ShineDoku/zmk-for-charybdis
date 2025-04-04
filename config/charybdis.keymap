@@ -10,43 +10,16 @@
 
 / {
     combos { compatible = "zmk,combos"; };
-/*
+
 behaviors {
         compatible = "zmk,behaviors";
-        
         custom_macro_jk_repeat: custom_macro_jk_repeat {
             compatible = "zmk,behavior-custom";
             #binding-cells = <0>;
             label = "CUSTOM_MACRO_JK_REPEAT";
         };
+        
     };
-
-    macros {
-        bns_macro1: bns_macro1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-<&macro_press &kp J>, 
-<&macro_press &kp F>, 
-<&macro_pause_for_release>,
-<&macro_release &kp J>,
-<&macro_release &kp F>;
-
-            label = "BNS_MACRO1";
-            wait-ms = <5>;
-            tap-ms = <5>;
-        };
-
-        bns_macro2: bns_macro2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp L>, <&macro_tap &kp X>, <&macro_pause_for_release>;
-
-            label = "BNS_MACRO2";
-            wait-ms = <5>;
-            tap-ms = <5>;
-        };
-    };*/
 
     keymap {
         compatible = "zmk,keymap";
@@ -89,7 +62,7 @@ behaviors {
         Mouse {
             bindings = <
 &none        &none   &none      &none  &none      &none        &none                 &none                 &none                 &none                 &none                 &none
-&none        &none   &kp W      &none  &none      &tog 0       &none                 &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
+&none        &none   &kp W      &none  &none      &tog 0       &custom_macro_jk_repeat                 &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
 &none        &kp A   &kp S      &kp D  &trans     &none        &none                 &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
 &bootloader  &trans  &mkp RCLK  &mo 4  &mkp LCLK  &mo 5        &kp LC(LA(NUMBER_1))  &mkp LCLK             &mkp MCLK             &mkp RCLK             &none                 &none
                                 &mo 5  &mkp LCLK  &mkp RCLK    &mkp LCLK             &mkp RCLK
