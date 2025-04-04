@@ -88,9 +88,9 @@ behaviors {
 
         Mouse {
             bindings = <
-&none        &none   &none      &none  &none      &none        &custom_macro_jk_repeat &none                 &none                 &none                 &none                 &none
-&none        &none   &kp W      &none  &none      &tog 0       &bns_macro1           &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
-&none        &kp A   &kp S      &kp D  &trans     &none        &bns_macro2           &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
+&none        &none   &none      &none  &none      &none        &none                 &none                 &none                 &none                 &none                 &none
+&none        &none   &kp W      &none  &none      &tog 0       &none                 &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
+&none        &kp A   &kp S      &kp D  &trans     &none        &none                 &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
 &bootloader  &trans  &mkp RCLK  &mo 4  &mkp LCLK  &mo 5        &kp LC(LA(NUMBER_1))  &mkp LCLK             &mkp MCLK             &mkp RCLK             &bns_macro1           &bns_macro2
                                 &mo 5  &mkp LCLK  &mkp RCLK    &mkp LCLK             &mkp RCLK
                                        &none      &trans       &trans
