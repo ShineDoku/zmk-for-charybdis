@@ -10,7 +10,7 @@
 
 / {
     combos { compatible = "zmk,combos"; };
-
+/*
 behaviors {
         compatible = "zmk,behaviors";
         
@@ -46,7 +46,7 @@ behaviors {
             wait-ms = <5>;
             tap-ms = <5>;
         };
-    };
+    };*/
 
     keymap {
         compatible = "zmk,keymap";
