@@ -12,11 +12,13 @@
     combos { compatible = "zmk,combos"; };
 
 behaviors {
-        compatible = "zmk,behaviors";
-        custom_macro_jk_repeat: custom_macro_jk_repeat {
-            compatible = "zmk,behavior-custom";
+        turbo: turbo {
+            compatible = "zmk,behavior-turbo-key";
+            label = "turbo";
             #binding-cells = <0>;
-            label = "CUSTOM_MACRO_JK_REPEAT";
+            tap-ms = <5>;
+            wait-ms = <300>;
+            bindings = <&kp C>;
         };
         
     };
@@ -62,7 +64,7 @@ behaviors {
         Mouse {
             bindings = <
 &none        &none   &none      &none  &none      &none        &none                 &none                 &none                 &none                 &none                 &none
-&none        &none   &kp W      &none  &none      &tog 0       &custom_macro_jk_repeat                 &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
+&none        &none   &kp W      &none  &none      &tog 0       &turbo                 &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
 &none        &kp A   &kp S      &kp D  &trans     &none        &none                 &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
 &bootloader  &trans  &mkp RCLK  &mo 4  &mkp LCLK  &mo 5        &kp LC(LA(NUMBER_1))  &mkp LCLK             &mkp MCLK             &mkp RCLK             &none                 &none
                                 &mo 5  &mkp LCLK  &mkp RCLK    &mkp LCLK             &mkp RCLK
