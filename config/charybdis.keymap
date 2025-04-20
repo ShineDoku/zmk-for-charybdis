@@ -16,8 +16,8 @@ behaviors {
             compatible = "zmk,behavior-turbo-key";
             label = "turbo";
             #binding-cells = <0>;
-            tap-ms = <10>;
-            wait-ms = <530>;
+            tap-ms = <150>;
+            wait-ms = <650>;
             bindings = <&kp F>, <&kp J>, <&kp F>;
         };
         turbo2: turbo2 {
