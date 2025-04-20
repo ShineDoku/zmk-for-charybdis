@@ -17,7 +17,7 @@
             label = "turbo";
             #binding-cells = <0>;
             tap-ms = <150>;
-            wait-ms = <450>;
+            wait-ms = <200>;
             bindings = <&kp F>, <&kp J>, <&kp F>;
         };
 
