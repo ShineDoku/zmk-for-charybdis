@@ -18,7 +18,7 @@
             #binding-cells = <0>;
             tap-ms = <150>;
             wait-ms = <200>;
-            bindings = <&kp F>, <&kp F>;
+            bindings = <&kp F>, <&kp J>, <&kp F>;
         };
 
         turbo2: turbo2 {
