@@ -1,6 +1,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 &lt {
     tapping-term-ms = <200>;
@@ -11,7 +12,7 @@
 / {
     combos { compatible = "zmk,combos"; };
 
-behaviors {
+    behaviors {
         turbo: turbo {
             compatible = "zmk,behavior-turbo-key";
             label = "turbo";
@@ -20,6 +21,7 @@ behaviors {
             wait-ms = <650>;
             bindings = <&kp F>, <&kp J>, <&kp F>;
         };
+
         turbo2: turbo2 {
             compatible = "zmk,behavior-turbo-key";
             label = "turbo2";
@@ -28,7 +30,6 @@ behaviors {
             wait-ms = <530>;
             bindings = <&kp L>, <&kp L>, <&kp X>;
         };
-        
     };
 
     keymap {
@@ -60,20 +61,20 @@ behaviors {
 
         layer_2 {
             bindings = <
-&kp F12           &kp F1      &kp F2      &kp F3         &kp F4         &kp F5          &kp F6        &kp F7         &kp F8    &kp F9     &kp F10  &kp F11
-&kp LS(GRAVE)     &kp LS(N1)  &kp LS(N2)  &kp LS(N3)     &kp LS(N4)     &kp LS(LBKT)    &kp LS(RBKT)  &none          &trans    &none      &none    &trans
-&kp LEFT_CONTROL  &kp LS(N5)  &kp LS(N6)  &kp LS(N7)     &kp LS(N8)     &none           &kp LS(BSLH)  &trans         &kp UP    &trans     &trans   &trans
-&kp LEFT_SHIFT    &kp LS(N9)  &kp LS(N0)  &kp LS(MINUS)  &kp LS(EQUAL)  &none           &none         &kp LEFT       &kp DOWN  &kp RIGHT  &none    &trans
-                                          &kp LEFT_ALT   &kp SPACE      &kp ENTER       &trans        &kp BACKSPACE
-                                                         &trans         &trans          &none
+&kp F12           &kp F1      &kp F2      &kp F3         &kp F4         &kp F5            &kp F6        &kp F7         &kp F8    &kp F9     &kp F10  &kp F11
+&kp LS(GRAVE)     &kp LS(N1)  &kp LS(N2)  &kp LS(N3)     &kp LS(N4)     &kp LS(LBKT)      &kp LS(RBKT)  &none          &trans    &none      &none    &trans
+&kp LEFT_CONTROL  &kp LS(N5)  &kp LS(N6)  &kp LS(N7)     &kp LS(N8)     &kp LANGUAGE_1    &kp LS(BSLH)  &trans         &kp UP    &trans     &trans   &trans
+&kp LEFT_SHIFT    &kp LS(N9)  &kp LS(N0)  &kp LS(MINUS)  &kp LS(EQUAL)  &kp LANG2         &none         &kp LEFT       &kp DOWN  &kp RIGHT  &none    &trans
+                                          &kp LEFT_ALT   &kp SPACE      &kp ENTER         &trans        &kp BACKSPACE
+                                                         &trans         &trans            &none
             >;
         };
 
         Mouse {
             bindings = <
 &none        &none   &none      &none  &none      &none        &none                 &none                 &none                 &none                 &none                 &none
-&none        &none   &kp W      &none  &none      &tog 0       &turbo                 &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
-&none        &kp A   &kp S      &kp D  &trans     &none        &turbo2                 &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
+&none        &none   &kp W      &none  &none      &tog 0       &turbo                &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
+&none        &kp A   &kp S      &kp D  &trans     &none        &turbo2               &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
 &bootloader  &trans  &mkp RCLK  &mo 4  &mkp LCLK  &mo 5        &kp LC(LA(NUMBER_1))  &mkp LCLK             &mkp MCLK             &mkp RCLK             &none                 &none
                                 &mo 5  &mkp LCLK  &mkp RCLK    &mkp LCLK             &mkp RCLK
                                        &none      &trans       &trans
@@ -103,7 +104,7 @@ behaviors {
                                       &trans     &trans       &trans
             >;
 
-           // trackball-bindings = <&tmv_fine>;//精准指针层
+            // trackball-bindings = <&tmv_fine>;//精准指针层
         };
     };
 };
