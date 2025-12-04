@@ -38,6 +38,35 @@
             wait-ms = <200>;
             bindings = <&kp L>;
         };
+        // Новое поведение для зацикленного турбо-макроса
+        turbo_macro_repeat: macro_repeat {
+            compatible = "zmk,behavior-macro-repeat";
+            label = "TURBO_SEQUENCE";
+            
+            // Настройка задержек между *каждым* шагом в последовательности
+            wait-ms = <0>; // Общая задержка между полными циклами (можно оставить 0)
+
+            // bindings определяет последовательность действий
+            bindings = <
+                // Button A
+                &macro_press &kp A 
+                &macro_pause_ms <5> 
+                &macro_release &kp A 
+                &macro_pause_ms <10> 
+
+                // Button B
+                &macro_press &kp B 
+                &macro_pause_ms <6> 
+                &macro_release &kp B 
+                &macro_pause_ms <11> 
+
+                // Button C
+                &macro_press &kp C 
+                &macro_pause_ms <3> 
+                &macro_release &kp C 
+                &macro_pause_ms <15>
+            >;
+        };
     };
 
     keymap {
@@ -47,7 +76,7 @@
             bindings = <
 &kp ESC         &kp N1  &kp N2  &kp N3       &kp N4                 &kp N5       &kp N6       &kp N7     &kp N8     &kp N9   &kp N0     &kp BSPC
 &kp TAB         &kp Q   &kp W   &kp E        &kp R                  &kp T        &kp Y        &kp U      &kp I      &kp O    &kp P      &kp BACKSLASH
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D        &kp F                  &kp G        &kp H        &kp J      &kp K      &turbo3  &kp SEMI   &kp APOS
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D        &kp F                  &kp G        &kp H        &kp J      &kp K      &kp L  &kp SEMI   &kp APOS
 &kp LCTRL       &kp Z   &kp X   &kp C        &kp V                  &kp B        &kp N        &kp M      &kp COMMA  &kp DOT  &kp SLASH  &kp DELETE
                                 &lt 2 ENTER  &lt 3 ESC              &mo 1        &lt 4 ENTER  &lt 5 TAB
                                              &mt LEFT_ALT LEFT_WIN  &kp LCTRL    &kp SPACE
@@ -81,7 +110,7 @@
         Mouse {
             bindings = <
 &none        &none   &none      &none  &none      &none        &none                 &none                 &none                 &none                 &none                 &none
-&none        &none   &kp W      &none  &none      &tog 0       &turbo                &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
+&none        &none   &kp W      &none  &none      &tog 0       &turbo_macro_repeat   &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
 &none        &kp A   &kp S      &kp D  &trans     &none        &turbo2               &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
 &bootloader  &trans  &mkp RCLK  &mo 4  &mkp LCLK  &mo 5        &kp LC(LA(NUMBER_1))  &mkp LCLK             &mkp MCLK             &mkp RCLK             &none                 &none
                                 &mo 5  &mkp LCLK  &mkp RCLK    &mkp LCLK             &mkp RCLK
