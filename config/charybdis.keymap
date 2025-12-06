@@ -42,7 +42,7 @@
         turbo_macro_repeat: macro_repeat {
             compatible = "zmk,behavior-macro-repeat";
             label = "TURBO_SEQUENCE";
-            
+            #binding-cells = <0>; 
             // Настройка задержек между *каждым* шагом в последовательности
             wait-ms = <0>; // Общая задержка между полными циклами (можно оставить 0)
 
