@@ -39,27 +39,12 @@
             bindings = <&kp L>;
         };
         // Новое поведение для зацикленного турбо-макроса
-        turbo_macro_repeat: macro_repeat {
-            compatible = "zmk,behavior-macro-repeat";
-            label = "TURBO_SEQUENCE";
-            #binding-cells = <0>; 
-            // Настройка задержек между *каждым* шагом в последовательности
-            wait-ms = <0>; // Общая задержка между полными циклами (можно оставить 0)
-
-            // bindings определяет последовательность действий
-            bindings = <
-                // Button A
-                &macro_press &kp A 
-                &macro_release &kp A 
-
-                // Button B
-                &macro_press &kp B
-                &macro_release &kp B
-
-                // Button C
-                &macro_press &kp C
-                &macro_release &kp C 
-            >;
+       turbo_macro: turbo_macro {
+            compatible = "zmk,behavior-macro";
+            label = "TURBO_MACRO";
+            wait-ms = <10>; // Задержка 10 мс между действиями
+            tap-ms = <5>;  // Длительность нажатия 5 мс
+            bindings = <&kp A &kp B &kp C>; // ваша последовательность
         };
     };
 
@@ -104,7 +89,7 @@
         Mouse {
             bindings = <
 &none        &none   &none      &none  &none      &none        &none                 &none                 &none                 &none                 &none                 &none
-&none        &none   &kp W      &none  &none      &tog 0       &turbo_macro_repeat   &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
+&none        &none   &kp W      &none  &none      &tog 0       &turbo_macro   &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
 &none        &kp A   &kp S      &kp D  &trans     &none        &turbo2               &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
 &bootloader  &trans  &mkp RCLK  &mo 4  &mkp LCLK  &mo 5        &kp LC(LA(NUMBER_1))  &mkp LCLK             &mkp MCLK             &mkp RCLK             &none                 &none
                                 &mo 5  &mkp LCLK  &mkp RCLK    &mkp LCLK             &mkp RCLK
