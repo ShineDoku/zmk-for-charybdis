@@ -2,11 +2,16 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/ShineDoku
+    - name: zmkfirmware2
+      url-base: https://github.com/zmkfirmware
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       revision: feature-test
       import: app/west.yml
+    - name: zmk
+      remote: zmkfirmware2
+      revision: main
   self:
     path: config
