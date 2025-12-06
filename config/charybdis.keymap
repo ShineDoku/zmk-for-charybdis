@@ -50,21 +50,15 @@
             bindings = <
                 // Button A
                 &macro_press &kp A 
-                &macro_pause_ms <5> 
                 &macro_release &kp A 
-                &macro_pause_ms <10> 
 
                 // Button B
-                &macro_press &kp B 
-                &macro_pause_ms <6> 
-                &macro_release &kp B 
-                &macro_pause_ms <11> 
+                &macro_press &kp B
+                &macro_release &kp B
 
                 // Button C
-                &macro_press &kp C 
-                &macro_pause_ms <3> 
+                &macro_press &kp C
                 &macro_release &kp C 
-                &macro_pause_ms <15>
             >;
         };
     };
