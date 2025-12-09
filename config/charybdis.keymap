@@ -10,7 +10,7 @@
 
 / {
     combos { compatible = "zmk,combos"; };
-
+ 
     behaviors {
         turbo: turbo {
             compatible = "zmk,behavior-turbo-key";
