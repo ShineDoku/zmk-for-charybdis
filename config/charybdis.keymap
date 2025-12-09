@@ -32,7 +32,7 @@
 
         turbo3: turbo3 {
             compatible = "zmk,behavior-turbo-key";
-            label = "turbo";
+            label = "turbo3";
             #binding-cells = <0>;
             tap-ms = <150>;
             wait-ms = <200>;
@@ -91,7 +91,7 @@
             bindings = <
 &none        &none   &none      &none  &none      &none        &none                 &none                 &none                 &none                 &none                 &none
 &none        &none   &kp W      &none  &none      &tog 0       &turbo_macro   &kp LA(LC(NUMBER_1))  &kp LA(LC(NUMBER_2))  &kp LA(LC(NUMBER_3))  &kp LA(LC(NUMBER_4))  &none
-&none        &kp A   &kp S      &kp D  &trans     &none        &turbo2               &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
+&none        &kp A   &kp S      &kp D  &trans     &none        &turbo               &kp LA(LC(N5))        &kp LA(LC(NUMBER_6))  &kp LA(LC(N7))        &kp LC(LA(N8))        &none
 &bootloader  &trans  &mkp RCLK  &mo 4  &mkp LCLK  &mo 5        &kp LC(LA(NUMBER_1))  &mkp LCLK             &mkp MCLK             &mkp RCLK             &none                 &none
                                 &mo 5  &mkp LCLK  &mkp RCLK    &mkp LCLK             &mkp RCLK
                                        &none      &trans       &trans
